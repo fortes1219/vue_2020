@@ -14,5 +14,17 @@ export default {
   components: {
     HelloWorld,
   },
+  methods: {
+    async packageGetData() {
+      // json-server  API 位置
+      const url = 'tableData';
+      const res = await this.$api.get(url);
+      this.tableData = [...res];
+      console.log(res);
+    },
+  },
+  created() {
+    this.packageGetData();
+  },
 };
 </script>
