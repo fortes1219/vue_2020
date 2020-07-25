@@ -1,8 +1,13 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <div class="row horizontal v_center">
+        <p @click="$router.push({name: 'Home'})">Home</p>|
+        <p @click="$router.push({name: 'About'})">About</p>|
+        <p @click="$router.push({name: 'Child'})">Child</p>
+      </div>
+      <!-- <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> -->
     </div>
     <router-view/>
   </div>
