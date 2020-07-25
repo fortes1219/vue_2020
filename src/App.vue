@@ -3,8 +3,7 @@
     <div id="nav">
       <div class="row horizontal v_center">
         <p @click="$router.push({name: 'Home'})">Home</p>|
-        <p @click="$router.push({name: 'About'})">About</p>|
-        <p @click="$router.push({name: 'Child'})">Child</p>
+        <p @click="$router.push({name: 'About'})">About</p>
       </div>
       <!-- <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> -->
