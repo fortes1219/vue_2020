@@ -19,6 +19,11 @@ const routes = [
         name: 'Dashboard',
         component: () => import('../components/Dashboard.vue'),
       },
+      {
+        path: 'data_event',
+        name: 'DataEvent',
+        component: () => import('../components/DataEvent.vue'),
+      },
     ],
   },
 ];
