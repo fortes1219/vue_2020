@@ -9,9 +9,13 @@
 }
 
 // html ex: data-space-next='0.5rem'
-@each $direction in "next", "before", "vertical", "horizontal", "bottom" {
+@each $direction in "all", "next", "before", "vertical", "horizontal", "bottom" {
     @for $i from 0 through 4 {
         [data-space-#{$direction}='#{$i * 0.5 + "rem"}'] {
+            @if $direction == "all" {
+                margin: #{$i * 0.5 + "rem"};
+            }
+            
             @if $direction == "next" {
                 margin-right: #{$i * 0.5 + "rem"};
             }
@@ -58,6 +62,10 @@
 
 [data-space="padding-xs"] {
     padding: 0.5rem;
+}
+
+[data-space="padding-default"] {
+    padding: 1rem;
 }
 
 [data-width="column-name"] {
