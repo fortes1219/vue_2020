@@ -24,6 +24,11 @@ const routes = [
         name: 'DataEvent',
         component: () => import('../components/DataEvent.vue'),
       },
+      {
+        path: 'api_temp',
+        name: 'ApiTemp',
+        component: () => import('../components/ApiTemp.vue'),
+      },
     ],
   },
 ];
