@@ -7,12 +7,13 @@
         <ul>
           <li @click="$router.push({name: 'Dashboard'})">Dashboard</li>
           <li @click="$router.push({name: 'DataEvent'})">Data Event</li>
-          <li @click="$router.push({name: 'Dashboard'})">Pickup</li>
-          <li @click="$router.push({name: 'Dashboard'})">圖表</li>
           <li @click="$router.push({name: 'ApiTemp'})">API</li>
+          <li @click="$router.push({name: 'PropsEmit'})">Props + Emit</li>
+          <!-- <li @click="$router.push({name: 'Dashboard'})">Pickup</li>
+          <li @click="$router.push({name: 'Dashboard'})">圖表</li>
           <li @click="$router.push({name: 'Dashboard'})">Local Storange</li>
           <li @click="$router.push({name: 'Dashboard'})">Cookies</li>
-          <li @click="$router.push({name: 'Dashboard'})">RegExp 正則表達式</li>
+          <li @click="$router.push({name: 'Dashboard'})">RegExp 正則表達式</li> -->
         </ul>
         <label>狀態管理</label>
         <ul>

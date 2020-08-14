@@ -29,6 +29,11 @@ const routes = [
         name: 'ApiTemp',
         component: () => import('../components/ApiTemp.vue'),
       },
+      {
+        path: 'props_emit',
+        name: 'PropsEmit',
+        component: () => import('../components/PropsEmit.vue'),
+      },
     ],
   },
 ];

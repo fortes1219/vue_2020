@@ -121,7 +121,7 @@ export default {
     },
 
     async updateData() {
-      const id = this.editForm.id;
+      const { id } = this.editForm;
       const source = `http://localhost:3000/tableData/${id}`;
       try {
         await this.$api.put(source, this.editForm);
