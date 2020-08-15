@@ -2,17 +2,29 @@
   <div class="page">
     <div class="row horizontal v_center space">
       <span class="row">{{ 'Props & Emit' }}</span>
-      <div class="row horizontal end">
-        <el-radio-group v-model="tabSelected" class="header__radio" size="large" @change="tabsChange">
-          <el-radio-button :label="0">{{ 'Mode A' }}</el-radio-button>
-          <el-radio-button :label="1">{{ 'Mode B' }}</el-radio-button>
-          <el-radio-button :label="2">{{ 'Mode C' }}</el-radio-button>
-        </el-radio-group>
-      </div>
     </div>
-    <div class="row horizontal v_center">
-      <child-panel :width="400" :height="400" :dotTop="50" :dotLeft="50" />
-      <child-panel :width="400" :height="400" :dotTop="10" :dotLeft="80" />
+    <div class="row horizontal" data-space="space-vertical">
+      <!-- props: dotTop, dotLeft to child -->
+      <child-panel
+        @handleEmitModeA="parentEmitModeA"
+        @handleEmitModeB="parentEmitModeB"
+        @handleEmitModeC="parentEmitModeC"
+        :dotTop="dotPos[0].top"
+        :dotLeft="dotPos[0].left"
+      />
+      <ChildPanel
+        @handleEmitModeA="parentEmitModeA"
+        @handleEmitModeB="parentEmitModeB"
+        @handleEmitModeC="parentEmitModeC"
+        :panelWidth="400"
+        :panelHeight="400"
+        :dotTop="dotPos[1].top"
+        :dotLeft="dotPos[1].left"
+      />
+    </div>
+    <div class="row horizontal">
+      <el-button @click="resetPos">Reset</el-button>
+      <el-button @click="setCenter">Center</el-button>
     </div>
   </div>
 </template>
@@ -28,15 +40,49 @@ export default {
   data() {
     return {
       tabSelected: 0,
+      dotPos: [
+        { top: 50, left: 50 },
+        { top: 10, left: 80 },
+      ],
     };
   },
   methods: {
-    tabsChange() {
-      console.log('tab active: ', this.tabSelected);
+    resetPos() {
+      this.dotPos.forEach((el) => {
+        el.top = 0;
+        el.left = 0;
+      });
+      console.log('(Parent-Reset) updated dot pos to child');
+    },
+    setCenter() {
+      this.dotPos.forEach((el) => {
+        el.top = 50;
+        el.left = 50;
+      });
+      console.log('(Parent-Center) updated dot pos to child');
+    },
+    parentEmitModeA(top, left) { // from child: top, left
+      // v-model: this.dotPos
+      this.dotPos.forEach((el) => {
+        el.top = top;
+        el.left = left;
+      });
+    },
+    parentEmitModeB(top, left) {
+      this.dotPos.forEach((el) => {
+        el.top = top;
+        el.left = left;
+      });
+    },
+    parentEmitModeC(top, left) {
+      this.dotPos.forEach((el) => {
+        el.top = top;
+        el.left = left;
+      });
     },
   },
   created() {
-    this.tabsChange();
+
   },
 };
 </script>

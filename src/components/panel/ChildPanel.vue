@@ -1,6 +1,13 @@
 <template>
-  <div class="panel" :style="{width: panelWidth + 'px', height: panelHeight + 'px' }">
-    <span class="pos_dot" :style="{top: dotTop + '%', left: dotLeft + '%',}"></span>
+  <div class="row">
+    <div class="row horizontal v_center">
+      <el-button @click="emitModeA(10, 50)">Mode A</el-button>
+      <el-button @click="emitModeB(20, 100)">Mode B</el-button>
+      <el-button @click="emitModeC(100, 100)">Mode C</el-button>
+    </div>
+    <div class="panel" :style="{width: panelWidth + 'px', height: panelHeight + 'px' }">
+      <span class="pos_dot" :style="{top: dotTop + '%', left: dotLeft + '%',}"></span>
+    </div>
   </div>
 </template>
 
@@ -10,11 +17,11 @@ export default {
   props: {
     panelWidth: {
       type: Number,
-      default: 400,
+      default: 100,
     },
     panelHeight: {
       type: Number,
-      default: 400,
+      default: 100,
     },
     dotTop: {
       type: Number,
@@ -31,9 +38,16 @@ export default {
     };
   },
   methods: {
-
+    emitModeA(top, left) {
+      this.$emit('handleEmitModeA', top, left);
+    },
+    emitModeB(top, left) {
+      this.$emit('handleEmitModeB', top, left);
+    },
+    emitModeC(top, left) {
+      this.$emit('handleEmitModeC', top, left);
+    },
   },
-
 };
 </script>
 <style lang="scss">
@@ -41,6 +55,7 @@ export default {
   position: relative;
   border: 1px solid #999;
   background: rgba(64, 57, 68, 0.7);
+  transition: all 0.3s ease-in-out;
   .pos_dot{
     position: absolute;
     transform: translateX(-50%) translateY(-50%);
@@ -48,6 +63,7 @@ export default {
     height: 30px;
     border: 1px solid #fff;
     border-radius: 50%;
+    transition: all 0.3s ease-in-out;
   }
 }
 </style>
