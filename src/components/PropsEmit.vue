@@ -11,17 +11,19 @@
       </div>
     </div>
     <div class="row horizontal v_center">
-      <ChildPanelA />
+      <child-panel :width="400" :height="400" :dotTop="50" :dotLeft="50" />
+      <child-panel :width="400" :height="400" :dotTop="10" :dotLeft="80" />
     </div>
   </div>
 </template>
 
 <script>
-import ChildPanelA from './panel/ChildPanel_A'
+import ChildPanel from './panel/ChildPanel.vue';
+
 export default {
   name: 'PropsEmit',
   components: {
-    ChildPanelA
+    ChildPanel,
   },
   data() {
     return {
