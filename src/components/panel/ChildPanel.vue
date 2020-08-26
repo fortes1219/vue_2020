@@ -25,11 +25,11 @@ export default {
     },
     dotTop: {
       type: Number,
-      defalut: 0,
+      default: 0,
     },
     dotLeft: {
       type: Number,
-      defalut: 0,
+      default: 0,
     },
   },
   data() {
