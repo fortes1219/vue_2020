@@ -39,7 +39,6 @@ export default {
   },
   data() {
     return {
-      tabSelected: 0,
       dotPos: [
         { top: 50, left: 50 },
         { top: 10, left: 80 },
