@@ -34,6 +34,11 @@ const routes = [
         name: 'PropsEmit',
         component: () => import('../components/PropsEmit.vue'),
       },
+      {
+        path: 'recursive_menu',
+        name: 'recursiveMenu',
+        component: () => import('../components/RecursiveMenu.vue'),
+      },
     ],
   },
 ];
