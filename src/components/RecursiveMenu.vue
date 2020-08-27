@@ -41,8 +41,24 @@ export default {
                   {
                     name: '3rd layer child_2',
                     route: '3rd',
-                    child: []
-                  },
+                    child: [
+                      {
+                        name: '4th layer child_1',
+                        route: '4th',
+                        child: []
+                      },
+                      {
+                        name: '4th layer child_2',
+                        route: '4th',
+                        child: []
+                      },
+                      {
+                        name: '4th layer child_3',
+                        route: '4th',
+                        child: []
+                      },
+                        ]
+                      },
                   {
                     name: '3rd layer child_3',
                     route: '3rd',

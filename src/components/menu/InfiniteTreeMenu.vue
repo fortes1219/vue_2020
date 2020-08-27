@@ -1,7 +1,7 @@
 <template>
 	<div class="tree-menu">
     <div class="label-wrapper" @click="toggleChildren">
-      <div :style="indent">
+      <div :style="indent" :class="hasChildClass">
         <i v-if="child"></i>
         {{ name }}
       </div>
@@ -41,7 +41,10 @@ export default {
 	computed: {
 		indent() {
       return { transform: `translate(${this.depth * 50}px)` }
-    }
+		},
+		hasChildClass() {
+      return { 'has-children': this.child.length > 0 }
+    },
 	},
 	methods: {
     toggleChildren() {
@@ -58,7 +61,20 @@ export default {
     border-bottom: 1px solid #ccc;
     cursor: pointer;
     .has-children {
+			position: relative;
 			display: table;
+			&:after {
+				content: "";
+				position: absolute;
+				right: -20px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 0;
+				height: 0;
+				border-top: 6px solid transparent;
+				border-bottom: 6px solid transparent;
+				border-left: 10px solid #bbb;
+			}
     }
   }
 }
