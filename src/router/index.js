@@ -39,6 +39,11 @@ const routes = [
         name: 'recursiveMenu',
         component: () => import('../components/RecursiveMenu.vue'),
       },
+      {
+        path: 'vuex',
+        name: 'Vuex',
+        component: () => import('../components/Vuex.vue'),
+      },
     ],
   },
 ];

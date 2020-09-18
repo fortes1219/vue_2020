@@ -21,7 +21,7 @@
         </ul>
         <label>狀態管理</label>
         <ul>
-          <li @click="$router.push({name: 'Dashboard'})">Vuex</li>
+          <li @click="$router.push({name: 'Vuex'})">Vuex</li>
         </ul>
         <label>多語系處理</label>
         <ul>
