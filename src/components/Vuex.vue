@@ -8,6 +8,7 @@
 
 <script>
 import { mapState, mapMutations, mapGetters, mapActions } from 'vuex'
+
 export default {
   name: 'Vuex',
   components: {
@@ -24,5 +25,5 @@ export default {
   created() {
 
   },
-};
+}
 </script>
