@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="row horizontal v_center space">
-      <!-- <el-button type="primary" @click="changeState('hello')">Mutation</el-button> -->
+      <el-button type="primary" @click="callMutation">call mutation</el-button>
     </div>
   </div>
 </template>
@@ -16,20 +16,29 @@ export default {
   },
   data() {
     return {
+      vuexName: '',
     }
   },
   computed: {
     // ...mapGetters(['mapGetVal']),
+    ...mapGetters([
+      'mapGetName',
+    ]),
   },
 
   methods: {
-    // ...mapMutations(['SET_STATE']),
+    ...mapMutations(['SET_STATE', 'changeName']),
     // changeState(val) {
     //   this.SET_TATE(val)
     // },
+    ...mapActions(['commitName']),
+    callMutation() {
+      this.changeName('Jack')
+      sessionStorage.setItem('vuexName', 'Jack')
+    },
   },
   created() {
-    // console.log(this.$store.modules.name)
+    this.vuexName = this.mapGetName
   },
 }
 </script>

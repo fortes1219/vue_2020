@@ -16,20 +16,23 @@ export default {
   },
   data() {
     return {
+      vuexName: '',
     }
   },
   computed: {
-    // ...mapGetters(['mapGetVal']),
+    ...mapGetters(['mapGetName']),
   },
 
   methods: {
-    // ...mapMutations(['SET_STATE']),
-    // changeState(val) {
-    //   this.SET_TATE(val)
-    // },
+    ...mapMutations(['changeName']),
+    changeState(val) {
+      this.changeName(val)
+    },
   },
   created() {
-    // console.log(this.$store.modules.name)
+    this.changeState(sessionStorage.getItem('vuexName'))
+    this.vuexName = this.mapGetName
+    console.log('after mutation name is: ', this.vuexName)
   },
 }
 </script>
