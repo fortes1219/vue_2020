@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="row horizontal v_center space">
-      <!-- <el-button type="primary" @click="changeState('hello')">Mutation</el-button> -->
+      <span class="row">Vuex Detail</span>
     </div>
   </div>
 </template>
@@ -10,7 +10,7 @@
 import { mapState, mapMutations, mapGetters, mapActions } from 'vuex'
 
 export default {
-  name: 'Vuex',
+  name: 'VuexDetail',
   components: {
 
   },

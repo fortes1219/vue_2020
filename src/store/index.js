@@ -7,7 +7,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   modules,
   state: {
-    name: 'Phoebe',
+
   },
   getters: {
 
