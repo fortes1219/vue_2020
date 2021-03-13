@@ -1,0 +1,18 @@
+{
+  "res": {
+    "type_1": [
+      {
+        "name": "Tyrant-002",
+        "class": "B.O.W.",
+        "date": "2019-12-26 00:00:00"
+      }
+    ],
+    "type_2": [
+      {
+        "name": "Jack",
+        "class": "F2E Developer(Jr.)",
+        "date": "2020-08-10 20:00:00"
+      }
+    ]
+  }
+}

@@ -9,6 +9,8 @@
         @handleEmitModeA="parentEmitModeA"
         @handleEmitModeB="parentEmitModeB"
         @handleEmitModeC="parentEmitModeC"
+        :panelWidth="200"
+        :panelHeight="200"
         :dotTop="dotPos[0].top"
         :dotLeft="dotPos[0].left"
       />
