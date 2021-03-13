@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import ChildPanel from './panel/ChildPanel.vue';
+import ChildPanel from './panel/ChildPanel.vue'
 
 export default {
   name: 'PropsEmit',
@@ -43,45 +43,45 @@ export default {
         { top: 50, left: 50 },
         { top: 10, left: 80 },
       ],
-    };
+    }
   },
   methods: {
     resetPos() {
       this.dotPos.forEach((el) => {
-        el.top = 0;
-        el.left = 0;
-      });
-      console.log('(Parent-Reset) updated dot pos to child');
+        el.top = 0
+        el.left = 0
+      })
+      console.log('(Parent-Reset) updated dot pos to child')
     },
     setCenter() {
       this.dotPos.forEach((el) => {
-        el.top = 50;
-        el.left = 50;
-      });
-      console.log('(Parent-Center) updated dot pos to child');
+        el.top = 50
+        el.left = 50
+      })
+      console.log('(Parent-Center) updated dot pos to child')
     },
     parentEmitModeA(top, left) { // from child: top, left
       // v-model: this.dotPos
       this.dotPos.forEach((el) => {
-        el.top = top;
-        el.left = left;
-      });
+        el.top = top
+        el.left = left
+      })
     },
     parentEmitModeB(top, left) {
       this.dotPos.forEach((el) => {
-        el.top = top;
-        el.left = left;
-      });
+        el.top = top
+        el.left = left
+      })
     },
     parentEmitModeC(top, left) {
       this.dotPos.forEach((el) => {
-        el.top = top;
-        el.left = left;
-      });
+        el.top = top
+        el.left = left
+      })
     },
   },
   created() {
 
   },
-};
+}
 </script>
