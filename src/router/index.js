@@ -29,6 +29,36 @@ const routes = [
         name: 'ApiTemp',
         component: () => import('../components/ApiTemp.vue'),
       },
+      {
+        path: 'props_emit',
+        name: 'PropsEmit',
+        component: () => import('../components/PropsEmit.vue'),
+      },
+      {
+        path: 'recursive_menu',
+        name: 'recursiveMenu',
+        component: () => import('../components/RecursiveMenu.vue'),
+      },
+      {
+        path: 'vuex',
+        name: 'Vuex',
+        meta: {
+          header: '這是第一頁',
+          premission: '',
+          dataType: 1,
+        },
+        component: () => import('../components/Vuex.vue'),
+      },
+      {
+        path: 'vuex_detail',
+        name: 'VuexDetail',
+        meta: {
+          header: '這是第二頁',
+          premission: '',
+          dataType: 2,
+        },
+        component: () => import('../components/VuexDetail.vue'),
+      },
     ],
   },
 ];
