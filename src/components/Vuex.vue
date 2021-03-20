@@ -3,9 +3,10 @@
     <div class="row horizontal v_center space">
       <el-button type="primary" @click="callMutation">call mutation</el-button>
     </div>
-    <span>{{ result }}</span><br>
     <el-button @click="$router.push({name: 'VuexDetail'})">next page</el-button>
     <el-button @click="dataParser">parser</el-button>
+    <br><br>
+    <span>{{ result }}</span>
   </div>
 </template>
 
