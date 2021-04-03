@@ -1,5 +1,5 @@
 const state = {
-  name: 'kkk',
+  temp_name: 'kkk',
   select: {
     gameVendor: [],
     gameType: [],
@@ -7,19 +7,19 @@ const state = {
 }
 const getters = {
   mapGetName: state => {
-    console.log('getter vuex name: ', state.name)
-    return state.name
+    console.log('getter vuex name: ', state.temp_name)
+    return state.temp_name
   },
 }
 const mutations = {
   changeName(state, val) {
-    state.name = val
-    console.log('mutation vuex name is: ', state.name)
+    state.temp_name = val
+    console.log('mutation vuex name is: ', val)
   },
 }
 const actions = {
-  commitName(val) {
-    val.commit('changeName')
+  commitName(context, payload) {
+    context.commit('changeName', payload)
   },
 }
 export default {
