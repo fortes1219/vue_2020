@@ -2,8 +2,9 @@
   "res": {
     "type_1": [
       {
-        "name": "Tyrant-002",
+        "name": "Keith",
         "class": "B.O.W.",
+        "status": "active",
         "date": "2019-12-26 00:00:00"
       }
     ],
@@ -11,6 +12,7 @@
       {
         "name": "Jack",
         "class": "F2E Developer(Jr.)",
+        "status": "active",
         "date": "2020-08-10 20:00:00"
       }
     ]

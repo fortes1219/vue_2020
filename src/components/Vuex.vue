@@ -1,12 +1,23 @@
 <template>
   <div class="page">
     <div class="row horizontal v_center space">
-      <el-button type="primary" @click="callMutation">call mutation</el-button>
+      <el-button type="primary">call mutation</el-button>
+      <el-button type="primary" @click="$router.push({name: 'VuexDetail'})">Next Page(VuexDetail)</el-button>
     </div>
-    <el-button @click="$router.push({name: 'VuexDetail'})">next page</el-button>
-    <el-button @click="dataParser">parser</el-button>
-    <br><br>
-    <span>{{ result }}</span>
+    <div class="row vertical" data-width="20rem">
+      <div class="row horizontal space" data-space-vertical="0.5rem">
+        <label>Name:</label>
+        <span>{{ setDOM.name }}</span>
+      </div>
+      <div class="row horizontal space" data-space-vertical="0.5rem">
+        <label>Class:</label>
+        <span>{{ setDOM.class }}</span>
+      </div>
+      <div class="row horizontal space" data-space-vertical="0.5rem">
+        <label>Status:</label>
+        <span>{{ setDOM.status }}</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,44 +31,25 @@ export default {
   },
   data() {
     return {
-      vuexName: '',
-      json: '',
       result: '',
     }
   },
   computed: {
-
+    setDOM() {
+      this.result = this.$store.state.res
+      return this.result
+    }
   },
 
   methods: {
-    callMutation() {
-      this.$store.commit('SET_TYPE', this.$route.meta.dataType)
-      this.dataParser()
-      console.log('##component## router type: ', this.$route.meta.dataType)
-    },
-    getData() {
-      const source = 'http://localhost:8080/data/vuex.json'
-      fetch(source).then((response) => response.json()).then((response) => {
-        this.json = JSON.parse(JSON.stringify(response))
-        this.$store.commit('SET_RESPONSE', this.json.res)
-        this.dataParser()
-        console.log('##get data: ', this.json.res)
-      })
-    },
-    dataParser() {
-      console.log('####', this.$store.state.res.type_1)
-      const caseObj = {
-        0: () => { this.result = 'Vuex not allowed!' },
-        1: () => { this.result = this.$store.state.res.type_1 },
-        2: () => { this.result = this.$store.state.res.type_2 },
-      }
-      caseObj[this.$store.state.type]()
-    },
+    async init() {
+      await this.$store.commit('SET_TYPE', 1)
+      await this.$store.dispatch('FETCH_RESPONSE')
+      console.log('result: ', this.setDOM)
+    }
   },
   created() {
-    this.getData()
-    console.log('router: ', this.$route)
-    console.log('store type: ', this.$store.state.type)
+    this.init()
   },
 }
 </script>
