@@ -1,5 +1,5 @@
 module.exports = {
-  root: true,
+  root: false,
   env: {
     node: true,
   },
@@ -17,6 +17,7 @@ module.exports = {
     'no-unused-vars': 0,
     'linebreak-style': 0,
     'semi': ["error", "never"],
-    'object-curly-newline': 0
+    'object-curly-newline': 0,
+    'eslint-disable-next-line': 
   },
 };
