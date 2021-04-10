@@ -7,15 +7,19 @@
     <div class="row vertical" data-width="20rem">
       <div class="row horizontal space" data-space-vertical="0.5rem">
         <label>Name:</label>
-        <span>{{ setDOM.name }}</span>
+        <span>{{ getResponse.name }}</span>
       </div>
       <div class="row horizontal space" data-space-vertical="0.5rem">
         <label>Class:</label>
-        <span>{{ setDOM.class }}</span>
+        <span>{{ getResponse.class }}</span>
       </div>
       <div class="row horizontal space" data-space-vertical="0.5rem">
         <label>Status:</label>
-        <span>{{ setDOM.status }}</span>
+        <span>{{ getResponse.status }}</span>
+      </div>
+      <div class="row horizontal space" data-space-vertical="0.5rem">
+        <label>Skills:</label>
+        <span>{{ getSkills.join(', ') }}</span>
       </div>
     </div>
   </div>
@@ -31,21 +35,20 @@ export default {
   },
   data() {
     return {
-      result: '',
+
     }
   },
   computed: {
-    setDOM() {
-      this.result = this.$store.state.res
-      return this.result
-    }
+    ...mapGetters([
+      'getResponse',
+      'getSkills',
+    ]),
   },
 
   methods: {
     async init() {
       await this.$store.commit('SET_TYPE', 1)
       await this.$store.dispatch('FETCH_RESPONSE')
-      console.log('result: ', this.setDOM)
     }
   },
   created() {

@@ -9,9 +9,21 @@ const store = new Vuex.Store({
   state: {
     res: {},
     type: 0,
+    skills: []
   },
   getters: {
-
+    getResponse(state) {
+      return state.res
+    },
+    getSkills(state) {
+      const skillArr = [] 
+      if (state.res.class === 'B.O.W.') {
+        skillArr.push('Rocket Launcher', 'Long Sword')
+      } else {
+        skillArr.push('Baseball Bat', 'Bullet Proof')
+      }
+      return skillArr
+    },
   },
   mutations: {
     SET_TYPE(state, payload) {
