@@ -46,9 +46,15 @@ export default {
   },
 
   methods: {
+    ...mapActions([
+      'FETCH_RESPONSE'
+    ]),
+    ...mapMutations([
+      'SET_TYPE'
+    ]),
     async init() {
-      await this.$store.commit('SET_TYPE', 1)
-      await this.$store.dispatch('FETCH_RESPONSE')
+      await this.SET_TYPE(1)
+      await this.FETCH_RESPONSE()
     }
   },
   created() {
