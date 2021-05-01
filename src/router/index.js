@@ -59,6 +59,11 @@ const routes = [
         },
         component: () => import('../components/VuexDetail.vue'),
       },
+      {
+        path: 'regex',
+        name: 'Regex',
+        component: () => import('../components/Regex.vue'),
+      },
     ],
   },
 ];

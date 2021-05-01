@@ -11,8 +11,8 @@
           <!-- <li @click="$router.push({name: 'Dashboard'})">Pickup</li>
           <li @click="$router.push({name: 'Dashboard'})">圖表</li>
           <li @click="$router.push({name: 'Dashboard'})">Local Storange</li>
-          <li @click="$router.push({name: 'Dashboard'})">Cookies</li>
-          <li @click="$router.push({name: 'Dashboard'})">RegExp 正則表達式</li> -->
+          <li @click="$router.push({name: 'Dashboard'})">Cookies</li>--->
+          <li @click="$router.push({name: 'Regex'})">RegExp 正則表達式</li>
         </ul>
         <label>子組件應用</label>
         <ul>
